@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Simples</title>
+    <link rel="stylesheet" href="./index.css?v=5">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="terminal">
+
+        <div class="display">
+            <image src="http://10.140.7.97:2000/frame-preview.png"/>
+        </div>
+
+        <div class="status">
+            <p id="Status"></p>
+        </div>
+
+        <div class="cursors_btns">
+            <div><button id="dec_index"/></div>
+            <div><button id="play"/></div>
+            <div><button id="inc_index"/></div>
+        </div>
+
+        <div class="statistics">
+            <div class="charts"></div>
+            <div class="tables"></div>
+        </div>
+
+        <div class="assist_btns"></div>
+
+    </div>
+    
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="./index.js?v=6"></script>
+    <script>
+        var tg = window.Telegram.WebApp
+        tg.expand()
+        
+        Telegram.WebApp.onEvent("mainButtonClicked", function(){
+	    tg.sendData(item);
+});
+
+    </script>
+</body>
+</html>
